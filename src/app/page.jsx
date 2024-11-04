@@ -8,8 +8,6 @@ import { toast } from "react-toastify";
 import { AuthContext, useAuth } from "@/context/authContext";
 
 export default function Homepage() {
-  const [email, setUseremail] = useState();
-  const [password, setPassword] = useState();
   const {
     register,
     handleSubmit,

@@ -21,12 +21,12 @@ const router = useRouter();
         router.push("/");
       }
     }
-  }, [user]);
+  }, [user,loading]);
   
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       {/* LEFT */}
-      <div className="left w-2/3  flex flex-col  gap-4">
+      <div className="left md:w-2/3  flex flex-col  gap-4">
         <div className="flex flex-wrap gap-4">
           <MetricCard metric="Orders" value="1,234" />
           <MetricCard metric="Revenue" value="$10,234" />
@@ -34,19 +34,19 @@ const router = useRouter();
           <MetricCard metric="Products Sold" value="789" />
         </div>
         <div className="flex flex-col md:flex-row  gap-2 justify-between h-[300px]">
-          <div className="w-1/3 rounded-2xl bg-white flex  ">
+          <div className="md:w-1/3 max-h-full rounded-2xl bg-white flex  ">
             <CountChart />
           </div>
-          <div className="w-2/3 bg-white rounded-2xl">
+          <div className="mt-4 md:w-2/3 bg-white rounded-2xl">
             <ECommerceChart />
           </div>
         </div>
-        <div className="">
+        <div className="m-4">
           <FinanceChart />
         </div>
       </div>
       {/* RIGHT */}
-      <div className="right w-1/3 ">
+      <div className="right flex flex-col  md:w-1/3 ">
         <ReactCalendar />
         <div>
           <div className="flex justify-between">
